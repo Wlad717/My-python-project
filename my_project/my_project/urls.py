@@ -20,5 +20,10 @@ from my_project_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index_page, name='index')
+    path('', views.index_page, name='index'),
+    path('general_stats/', views.general_stats_page, name='general_stats'),
+    path('relevance/', views.relevance_page, name='relevance'),
+    path('geography/', views.geography_page, name='geography'),
+    path('top_skills/', views.top_skills_page, name='top_skills'),
+    path('last_vacancies/', views.last_vacancies_page, name='last_vacancies'),
 ]

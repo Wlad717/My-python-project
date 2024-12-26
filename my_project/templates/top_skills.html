@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навыки</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={% now 'U' %}">
+</head>
+<body>
+    <header>
+        <h1>Analytics Everywhere</h1>
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+    </header>
+    <main>
+    <nav>
+        <a class="main-navigation" href="{% url 'index' %}">Главная страница</a>
+        <a class="main-navigation" href="{% url 'general_stats' %}">Общая статистика</a>
+        <a class="main-navigation" href="{% url 'relevance' %}">Востребованность</a>
+        <a class="main-navigation" href="{% url 'geography' %}">География</a>
+        <a class="main-navigation" href="{% url 'top_skills' %}">Навыки</a>
+        <a class="main-navigation" href="{% url 'last_vacancies' %}">Последние вакансии</a>
+    </nav>
+
+
+    </main>
+    <footer>
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+        <p>Автор: Горьков Владислав Дмитриевич. Академическая группа: РИ-230931</p>
+    </footer>
+</body>
+</html>
