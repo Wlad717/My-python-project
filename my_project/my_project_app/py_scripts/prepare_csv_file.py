@@ -14,7 +14,7 @@ def remake_to_rub(vacancy, currency_df):
 
 
 def prepare_vacancies(currency_df, vacancies_df):
-    vacancies_df['date'] = pd.to_datetime(vacancies_df['published_at'], errors='coerce', utc=True).dt.strftime('Y-%m')
+    vacancies_df['date'] = pd.to_datetime(vacancies_df['published_at'], errors='coerce', utc=True).dt.strftime('%Y-%m')
     print('date')
     vacancies_df['salary'] = vacancies_df.apply(lambda x: x[['salary_from', 'salary_to']].mean(), axis=1)
     print('sal')
