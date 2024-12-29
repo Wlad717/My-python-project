@@ -12,8 +12,8 @@ def get_info(tree, one_currency):
     required_information = tree.xpath(f"//Valute[CharCode='{one_currency}']")
     if not required_information:
         return None
-    currency_vunit_rate = float(required_information[0].find('VunitRate').text.replace(',', '.'))
-    return currency_vunit_rate
+    currency_vunit = float(required_information[0].find('VunitRate').text.replace(',', '.'))
+    return currency_vunit
 
 
 def prepare_currency_information(date):
