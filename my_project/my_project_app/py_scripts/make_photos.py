@@ -67,22 +67,24 @@ def create_vac_by_area(df, name):
         .query('percent >= 0.01')
         .reset_index()
     )
+    sorted_vac_by_city.loc[14] = ['Другие города', 2286788, 0.3307]
 
     plt.figure(figsize=(10, 8))
     plt.pie(sorted_vac_by_city['percent'],
-            labels=sorted_vac_by_city['area_name'],
-            autopct='%1.1f%%',
+            labels=None,
+            autopct='%1.2f%%',
             startangle=90,
             wedgeprops={"edgecolor": "0", 'linewidth': 1, 'linestyle': 'solid',
                         'antialiased': True})
     plt.title('Распределение вакансий по городам', fontsize=16)
+    plt.legend(
+        list(sorted_vac_by_city['area_name']),  # Метки для легенды
+        loc='center left',  # Размещение легенды
+        bbox_to_anchor=(0.95, 0.5),  # Положение легенды относительно графика
+        title='Города'  # Заголовок легенды
+    )
     plt.tight_layout()
     plt.savefig(name)
-
-
-import pandas as pd
-import re
-import matplotlib.pyplot as plt
 
 
 def prepare_skills_df(df):
@@ -158,7 +160,7 @@ def main():
     #create_vac_by_years(analytics_df, 'relevance_photos/vac_by_years.png')
     #create_salary_by_area(vacancies_df, 'all_stats/salary_by_area.png')
     #create_salary_by_area(analytics_df, 'geography_photos/salary_by_area.png')
-    #create_vac_by_area(vacancies_df, 'all_stats/vac_by_area.png')
+    create_vac_by_area(vacancies_df, 'all_stats/vac_by_area(2).png')
     #create_vac_by_area(analytics_df, 'geography_photos/vac_by_area.png')
     #create_top_skills(vacancies_df, 'all_stats/top_skills.png')
     #create_top_skills(analytics_df, 'top-skills_photos/top_skills.png')
