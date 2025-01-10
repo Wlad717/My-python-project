@@ -3,6 +3,8 @@ body, html {
   padding: 0;
   font-family: sans-serif;
   min-height: 100vh;
+  width: 1471px;
+  margin: auto;
 }
 
 header {
@@ -10,7 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  background-color: #C9EBB8;
+  background-color: #a6c9db;
   padding: 0 20px;
 }
 
@@ -32,7 +34,7 @@ body {
 nav {
     flex-basis: 170px;
     flex-shrink: 0;
-    background-color: #e7ffc8;
+    background-color: #dff4ff;
     padding: 20px;
 }
 
@@ -45,7 +47,7 @@ nav a.main-navigation {
 
 nav a.main-navigation:hover {
     text-decoration: underline;
-    background-color: #D1E7C6;
+    background-color: #c0cbd1;
 }
 
 .main-page-content {
@@ -59,7 +61,7 @@ main {
 
 .emphasis {
     font-weight: bold;
-    color: #4f7421 ;
+    color: #1f3f6d;
 }
 
 .photo-text {
@@ -98,7 +100,7 @@ ul {
 
 footer {
     display: flex;
-    background-color: #C9EBB8;
+    background-color: #a6c9db;
     padding: 10px 20px;
     margin-left: 0;
 }
