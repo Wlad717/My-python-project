@@ -160,7 +160,7 @@ def main():
     #create_vac_by_years(analytics_df, 'relevance_photos/vac_by_years.png')
     #create_salary_by_area(vacancies_df, 'all_stats/salary_by_area.png')
     #create_salary_by_area(analytics_df, 'geography_photos/salary_by_area.png')
-    create_vac_by_area(vacancies_df, 'all_stats/vac_by_area(2).png')
+    #create_vac_by_area(vacancies_df, 'all_stats/vac_by_area(2).png')
     #create_vac_by_area(analytics_df, 'geography_photos/vac_by_area.png')
     #create_top_skills(vacancies_df, 'all_stats/top_skills.png')
     #create_top_skills(analytics_df, 'top-skills_photos/top_skills.png')
