@@ -150,7 +150,6 @@ def create_top_skills(df, name):
     plt.savefig(name)
 
 
-
 def main():
     analytics_df = pd.read_csv('csv_prepared_files/analytic_prepared_vacancies_2024.csv')
     vacancies_df = pd.read_csv('csv_prepared_files/prepared_vacancies_2024.csv')
