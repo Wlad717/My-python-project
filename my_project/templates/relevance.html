@@ -21,7 +21,61 @@
         <a class="main-navigation" href="{% url 'top_skills' %}">Навыки</a>
         <a class="main-navigation" href="{% url 'last_vacancies' %}">Последние вакансии</a>
     </nav>
-
+    <article>
+        <h2>
+            Востребованность профессии "Аналитик"
+        </h2>
+        <div class="one-part">
+            <div class="flex-box">
+                <div class="photo">
+                    <img src="{{ photo_salary_year.current_graph.url }}" alt="{{ photo_salary_year.graph_name }}">
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Зарплата</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in salary_year %}
+                                <tr>
+                                    <td>{{ row.date }}</td>
+                                    <td>{{ row.salary }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="one-part">
+            <div class="flex-box">
+                <div class="photo">
+                    <img src="{{ photo_vacancies_year.current_graph.url }}" alt="{{ photo_vacancies_year.graph_name }}">
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Количество вакансий</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in vacancies_year %}
+                                <tr>
+                                    <td>{{ row.date }}</td>
+                                    <td>{{ row.vacancies_count }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
 
     </main>
     <footer>

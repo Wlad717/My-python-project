@@ -21,8 +21,61 @@
         <a class="main-navigation" href="{% url 'top_skills' %}">Навыки</a>
         <a class="main-navigation" href="{% url 'last_vacancies' %}">Последние вакансии</a>
     </nav>
-
-
+        <article>
+            <h2>
+                География профессии "Аналитик"
+            </h2>
+            <div class="one-part">
+                <div class="flex-box">
+                    <div class="photo">
+                        <img src="{{ photo_salary_city.current_graph.url }}" alt="{{ photo_salary_city.graph_name }}">
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Город</th>
+                                    <th>Зарплата</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in salary_city %}
+                                <tr>
+                                    <td>{{ row.city }}</td>
+                                    <td>{{ row.salary }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="one-part">
+                <div class="flex-box">
+                    <div class="photo">
+                        <img src="{{ photo_vacancies_city.current_graph.url }}" alt="{{ photo_vacancies_city.graph_name }}">
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Город</th>
+                                <th>Количество вакансий (%)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in vacancies_city %}
+                                    <tr>
+                                        <td>{{ row.city }}</td>
+                                        <td>{{ row.vacancies_count }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </article>
     </main>
     <footer>
         <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>

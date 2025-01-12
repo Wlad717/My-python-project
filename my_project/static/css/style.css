@@ -82,9 +82,9 @@ ul {
 }
 
 .content-block {
-    border: 3px solid #3c523d; /* светло-серый цвет обводки */
+    border: 3px solid #3c523d;
     padding:15px;
-    border-radius: 8px; /* закругление углов */
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
@@ -97,6 +97,13 @@ ul {
     width: 600px;
     height: 330px;
 }
+
+.flex-box {
+    display: flex;
+}
+
+
+
 
 footer {
     display: flex;

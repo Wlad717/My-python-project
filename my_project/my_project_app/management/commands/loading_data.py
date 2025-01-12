@@ -57,7 +57,7 @@ class Command(BaseCommand):
 
         for index, row in all_stats_vac_area.iterrows():
             AllStatsVacanciesCity.objects.create(
-                vacancies_count = row['percent'],
+                vacancies_count = round(row['percent'] * 100),
                 city = row['area_name'],
             )
 
@@ -89,7 +89,7 @@ class Command(BaseCommand):
 
         for index, row in analytic_vac_area.iterrows():
             GeographyVacanciesCity.objects.create(
-                vacancies_count = row['percent'],
+                vacancies_count = round(row['percent'] * 100),
                 city = row['area_name'],
             )
 

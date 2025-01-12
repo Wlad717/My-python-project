@@ -21,7 +21,38 @@
         <a class="main-navigation active" href="{% url 'top_skills' %}">Навыки</a>
         <a class="main-navigation" href="{% url 'last_vacancies' %}">Последние вакансии</a>
     </nav>
-
+    <article>
+        <h2>
+            Топ навыков профессии "Аналитик"
+        </h2>
+        <div class="one-part">
+            <div class="flex-box">
+                <div class="photo">
+                    <img src="{{ photo_skills.current_graph.url }}" alt="{{ photo_skills.graph_name }}">
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Год</th>
+                            <th>Навык</th>
+                            <th>Количество</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in top_skills %}
+                                <tr>
+                                    <td>{{ row.date }}</td>
+                                    <td>{{ row.current_skill }}</td>
+                                    <td>{{ row.skill_count }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
 
     </main>
     <footer>
