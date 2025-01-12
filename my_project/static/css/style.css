@@ -2,9 +2,9 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  min-height: 100vh;
-  width: 1471px;
+  width: 100%;
   margin: auto;
+  max-width: 1471px;
 }
 
 header {
@@ -19,7 +19,9 @@ header {
 header h1 {
     margin: 0;
     font-size: 40px;
-    padding-left: 500px;
+    padding-left: 20px;
+    flex-grow: 1;
+    text-align: center;
 }
 
 h1 {
@@ -99,8 +101,9 @@ ul {
 }
 
 .photo-text img {
-    width: 600px;
-    height: 330px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
 }
 
 .flex-box {
@@ -118,7 +121,8 @@ ul {
 }
 
 .one-part {
-    width: 1195px;
+    width: 100%;
+    max-width: 1195px;
     border: 3px solid #6d79ba;
     padding:15px;
     border-radius: 8px;
@@ -131,7 +135,9 @@ ul {
 }
 
 .photo img {
-    width: 900px;
+     width: 100%;
+    max-width: 900px;
+    height: auto;
 }
 
 footer {
@@ -161,7 +167,9 @@ footer img {
     margin: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #f0f4f8;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .table table {
