@@ -22,15 +22,15 @@
         <a class="main-navigation" href="{% url 'last_vacancies' %}">Последние вакансии</a>
     </nav>
     <article class="content">
-        <h2>
+        <h2 class="page-mini-header">
             Общая статистика вакансий
         </h2>
         <div class="one-part">
             <div class="flex-box">
-                <div class="photo">
+                <div class="photo salary-year">
                     <img src="{{ photo_salary_year.current_graph.url }}" alt="{{ photo_salary_year.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
@@ -55,7 +55,7 @@
                 <div class="photo">
                     <img src="{{ photo_vacancies_year.current_graph.url }}" alt="{{ photo_vacancies_year.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
@@ -81,7 +81,7 @@
                 <div class="photo">
                     <img src="{{ photo_salary_city.current_graph.url }}" alt="{{ photo_salary_city.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
@@ -106,7 +106,7 @@
                 <div class="photo">
                     <img src="{{ photo_vacancies_city.current_graph.url }}" alt="{{ photo_vacancies_city.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
@@ -132,7 +132,7 @@
                 <div class="photo">
                     <img src="{{ photo_top_skills.current_graph.url }}" alt="{{ photo_top_skills.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
@@ -154,8 +154,6 @@
                 </div>
             </div>
         </div>
-
-
     </article>
     </main>
     <footer>

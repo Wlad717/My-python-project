@@ -21,8 +21,8 @@
         <a class="main-navigation" href="{% url 'top_skills' %}">Навыки</a>
         <a class="main-navigation" href="{% url 'last_vacancies' %}">Последние вакансии</a>
     </nav>
-    <article>
-        <h2>
+    <article class="content">
+        <h2 class="page-mini-header">
             Востребованность профессии "Аналитик"
         </h2>
         <div class="one-part">
@@ -30,7 +30,7 @@
                 <div class="photo">
                     <img src="{{ photo_salary_year.current_graph.url }}" alt="{{ photo_salary_year.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
@@ -55,7 +55,7 @@
                 <div class="photo">
                     <img src="{{ photo_vacancies_year.current_graph.url }}" alt="{{ photo_vacancies_year.graph_name }}">
                 </div>
-                <div class="table">
+                <div class="table table-container">
                     <table>
                         <thead>
                         <tr>
