@@ -21,7 +21,25 @@
         <a class="main-navigation" href="{% url 'top_skills' %}">Навыки</a>
         <a class="main-navigation active" href="{% url 'last_vacancies' %}">Последние вакансии</a>
     </nav>
-
+    <div class="content">
+        {% if vacancies %}
+             <ul>
+                 {% for vacancy in vacancies %}
+                 <li class="content-block">
+                     <h2>{{ vacancy.name }}</h2>
+                     <p><span class="emphasis">Компания:</span> {{ vacancy.company }}</p>
+                     <p><span class="emphasis">Оклад:</span> {{ vacancy.salary }}</p>
+                     <p><span class="emphasis">Регион:</span> {{ vacancy.area }}</p>
+                     <p><span class="emphasis">Дата публикации:</span> {{ vacancy.published_at|date:"d.m.Y H:i" }}</p>
+                     <p><span class="emphasis">Описание:</span> {{ vacancy.description|safe }}</p>
+                     <p><span class="emphasis">Навыки:</span> {{ vacancy.skills }}</p>
+                 </li>
+                 {% endfor %}
+             </ul>
+             {% else %}
+                 <p>Нет вакансий за последние 24 часа.</p>
+        {% endif %}
+    </div>
 
     </main>
     <footer>
