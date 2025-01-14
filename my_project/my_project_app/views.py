@@ -95,12 +95,12 @@ def last_vacancies_page(request):
     professions = ['analytic', 'аналитик', 'analyst', 'аналітик']
     url = 'https://api.hh.ru/vacancies'
     vacancies = []
-    total_vacancies_loaded = 0  # Счетчик загруженных вакансий
+    total_vacancies_loaded = 0
 
     for profession in professions:
         params = {
             'text': profession,
-            'per_page': 10,  # Запрашиваем 10 вакансий для каждой профессии
+            'per_page': 10,
             'order_by': 'publication_time',
             'date_from': (datetime.now() - timedelta(days=1)).isoformat(),
         }
@@ -110,8 +110,8 @@ def last_vacancies_page(request):
         if response.status_code == 200:
             data = response.json()
             for item in data['items']:
-                if total_vacancies_loaded >= 10:  # Проверка, если уже загружено 10 вакансий
-                    break  # Выходим из цикла, если достигли лимита
+                if total_vacancies_loaded >= 10:
+                    break
 
                 vacancy_details = fetch_vacancy_details(item['id'])
                 if vacancy_details:
@@ -120,7 +120,7 @@ def last_vacancies_page(request):
                     published_at_str = item.get('published_at')
                     if published_at_str:
                         published_at = datetime.fromisoformat(
-                            published_at_str.replace('Z', '+00:00'))  # Исправленная строка
+                            published_at_str.replace('Z', '+00:00'))
                     else:
                         published_at = None
 
@@ -131,9 +131,9 @@ def last_vacancies_page(request):
                         'company': item['employer']['name'] if item.get('employer') else "Не указано",
                         'salary': get_salary_string(item.get('salary', {})),
                         'area': item['area']['name'],
-                        'published_at': published_at,  # Исправленная строка
+                        'published_at': published_at,
                     })
-                    total_vacancies_loaded += 1  # Увеличиваем счетчик
+                    total_vacancies_loaded += 1
 
     return render(request, 'last_vacancies.html', {'vacancies': vacancies})
 
