@@ -4,7 +4,6 @@ body, html {
   font-family: sans-serif;
   width: 100%;
   margin: auto;
-  max-width: 1471px;
 }
 
 header {
@@ -18,7 +17,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 40px;
+    font-size: 2.5rem;
     padding-left: 20px;
     flex-grow: 1;
     text-align: center;
@@ -38,8 +37,8 @@ body {
 }
 
 nav {
-    flex-basis: 170px;
-    flex-shrink: 0;
+    flex-basis: 20%;
+    flex-shrink: 1;
     background-color: #dff4ff;
     padding: 20px;
 }
@@ -63,6 +62,8 @@ nav a.main-navigation:hover {
 main {
     display: flex;
     flex-grow: 1;
+    max-width: 1471px;
+    margin: auto;
 }
 
 .emphasis {
@@ -116,7 +117,6 @@ ul {
     margin:0;
     padding: 20px;
     padding-right: 9px;
-
 }
 
 .one-part {
@@ -134,8 +134,8 @@ ul {
 }
 
 .photo img {
-     width: 100%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -147,8 +147,9 @@ footer {
 }
 
 footer p {
-    font-size:20px;
-    margin-left: 100px;
+    font-size: 1.25rem;
+    margin-left: 20px;
+    margin: auto;
 }
 
 footer img {
@@ -168,7 +169,6 @@ footer img {
     background-color: #f0f4f8;
     display: flex;
     flex-direction: column;
-
 }
 
 .table table {
@@ -194,4 +194,38 @@ footer img {
 
 .table tbody tr:hover {
     background-color: #d4e3ee;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav {
+        flex-basis: 30%;
+        padding: 10px;
+    }
+    .photo-text{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .table-container {
+      max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav {
+        flex-basis: 50%;
+        padding: 5px;
+    }
+    .photo-text{
+         flex-direction: column;
+         gap: 5px;
+    }
+    .table-container {
+       max-height: 300px;
+    }
 }

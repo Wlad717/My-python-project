@@ -78,10 +78,10 @@ def create_vac_by_area(df, name):
                         'antialiased': True})
     plt.title('Распределение вакансий по городам', fontsize=16)
     plt.legend(
-        list(sorted_vac_by_city['area_name']),  # Метки для легенды
-        loc='center left',  # Размещение легенды
-        bbox_to_anchor=(0.95, 0.5),  # Положение легенды относительно графика
-        title='Города'  # Заголовок легенды
+        list(sorted_vac_by_city['area_name']),
+        loc='center left',
+        bbox_to_anchor=(0.95, 0.5),
+        title='Города'
     )
     plt.tight_layout()
     plt.savefig(name)
@@ -153,16 +153,16 @@ def create_top_skills(df, name):
 def main():
     analytics_df = pd.read_csv('csv_prepared_files/analytic_prepared_vacancies_2024.csv')
     vacancies_df = pd.read_csv('csv_prepared_files/prepared_vacancies_2024.csv')
-    #create_salary_by_years(vacancies_df, 'all_stats/salary_by_years.png')
-    #create_salary_by_years(analytics_df, 'relevance_photos/salary_by_years.png')
-    #create_vac_by_years(vacancies_df, 'all_stats/vac_by_years.png')
-    #create_vac_by_years(analytics_df, 'relevance_photos/vac_by_years.png')
-    #create_salary_by_area(vacancies_df, 'all_stats/salary_by_area.png')
-    #create_salary_by_area(analytics_df, 'geography_photos/salary_by_area.png')
-    #create_vac_by_area(vacancies_df, 'all_stats/vac_by_area(2).png')
-    #create_vac_by_area(analytics_df, 'geography_photos/vac_by_area.png')
-    #create_top_skills(vacancies_df, 'all_stats/top_skills.png')
-    #create_top_skills(analytics_df, 'top-skills_photos/top_skills.png')
+    create_salary_by_years(vacancies_df, 'all_stats/salary_by_years.png')
+    create_salary_by_years(analytics_df, 'relevance_photos/salary_by_years.png')
+    create_vac_by_years(vacancies_df, 'all_stats/vac_by_years.png')
+    create_vac_by_years(analytics_df, 'relevance_photos/vac_by_years.png')
+    create_salary_by_area(vacancies_df, 'all_stats/salary_by_area.png')
+    create_salary_by_area(analytics_df, 'geography_photos/salary_by_area.png')
+    create_vac_by_area(vacancies_df, 'all_stats/vac_by_area(2).png')
+    create_vac_by_area(analytics_df, 'geography_photos/vac_by_area.png')
+    create_top_skills(vacancies_df, 'all_stats/top_skills.png')
+    create_top_skills(analytics_df, 'top-skills_photos/top_skills.png')
 
 
 if __name__ == "__main__":

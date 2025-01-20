@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import requests
 from datetime import datetime, timedelta
+import re
 from my_project_app.models import *
 
 
@@ -118,9 +119,10 @@ def last_vacancies_page(request):
                     skills = vacancy_details.get('key_skills', [])
                     skills_string = ', '.join([skill['name'] for skill in skills]) if skills else ''
                     published_at_str = item.get('published_at')
+                    published_at_str = re.sub(r'([+-]\d{2})(\d{2})$', r'\1:\2', published_at_str)
+
                     if published_at_str:
-                        published_at = datetime.fromisoformat(
-                            published_at_str.replace('Z', '+00:00'))
+                        published_at = datetime.fromisoformat(published_at_str)
                     else:
                         published_at = None
 
